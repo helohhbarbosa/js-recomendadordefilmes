@@ -1,0 +1,59 @@
+// Velozes & Furiosos7, 14 , ação e thiller
+// Homem aranha: de volta oa lar, livre, ação
+// Bad boys para sempre, 16 , ação
+//As Braquelas, 12 , comedia e crime 
+// Gente Grande, 12 , comedia
+//Todo mundo em panico, 16 , comedia e terror
+//Coraline e o Mundo Secreto 10 , fantasia e terror
+//A Noiva Cadaver, livre , fantasia e infantil
+// Alice No Pais Das Maravilhas, 10 , fantasia e infantil
+//O Estranho Mundo de Jack, livre , musical e fantasia
+//A cinco passos de você, 12, romance e drama
+
+
+let idade
+let campoIdade
+let gostaDeComedia
+let campoComedia
+
+
+function setup() {
+  createElement ('h1', 'Recomendador de filmes')
+ createCanvas(800, 400);
+  createSpan ("Qual a sua idade?")
+  campoIdade = createInput ()
+  campoComedia = createCheckbox ("você gosta de comedia?")
+}
+
+function draw() {
+  background("rgb(224,224,248)");
+  idade = campoIdade .value()
+  gostaDeComedia = campoComedia.checked()
+  let recomendacao = geraRecomendacao ()
+  textAlign (CENTER,CENTER)
+  textSize(30)
+  fill ("black")
+  text (recomendacao, 400,200)
+}
+function geraRecomendacao () {
+  if (gostaDeComedia){
+  if (idade > 10) {
+    if(idade >= 12){
+  return "Velozes & Furiosos7"
+    }
+    else{
+      return "Gente Grande"
+    }
+}
+   else {
+  return "O Estranho Mundo de Jack"   
+   }
+
+   
+ }
+else {
+  return "A cinco passos de você"
+
+}
+}
+  
